@@ -38,13 +38,17 @@
     "hbsfy": "~1.3.2",
     "vinyl-source-stream": "~0.1.1",
     "gulp-iconfont": "pprince/gulp-iconfont#log-and-error-options",
-    "gulp-consolidate": "~0.1.2",
     "gulp-util": "~2.2.14",
-    "swig": "~1.3.2",
     "glob": "~3.2.9",
     "gulp-front-matter": "~1.0.0",
+    "coffee-script": "~1.7.1",
+    "gulp-pandoc": "~0.2.0",
+    "event-stream": "~3.1.2",
+    "gulp-vartree": "0.0.7",
+    "gulp-consolidate": "~0.1.2",
     "gulp-ssg": "~0.4.5",
-    "coffee-script": "~1.7.1"
+    "gulp-header": "~1.0.2",
+    "swig": "~1.3.2"
   },
   "dependencies": {
     "backbone": "~1.1.2",
