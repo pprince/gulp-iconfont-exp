@@ -1,7 +1,8 @@
-var fs = require('fs');
-var onlyScripts = require('./util/scriptFilter');
-var tasks = fs.readdirSync('./gulp/tasks/').filter(onlyScripts);
-
-tasks.forEach(function(task) {
-	require('./tasks/' + task);
-});
+require('./tasks/browserify.js');
+require('./tasks/build.js');
+require('./tasks/compass.js');
+require('./tasks/copy.js');
+require('./tasks/default.js');
+require('./tasks/iconfont.js');
+require('./tasks/images.js');
+require('./tasks/watch.js');
