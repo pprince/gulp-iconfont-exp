@@ -47,6 +47,6 @@ gulp.task('content', function() {
             ]
         }))
 
-        .pipe(gulp.dest('build/content'))
+        .pipe(gulp.dest('gen/content'))
     ;
 });
