@@ -4,7 +4,7 @@ var iconfont    = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
 
 gulp.task('iconfont', function() {
-    gulp.src(['src/iconfont/**/*.svg'])
+    return gulp.src(['src/iconfont/**/*.svg'])
         .pipe(iconfont({
             fontName: 'iconfont',
             log: function() {
