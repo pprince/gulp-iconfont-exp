@@ -20,10 +20,8 @@ gulp.task('iconfont', function() {
                 arr[idx].codepoint = glyph.codepoint.toString(16)
             });
             gulp.src('src/sass/templates/_iconfont.scss')
-                .pipe(consolidate('lodash', {
-                    glyphs: codepoints,
-                    fontName: options.fontName,
-                    fontPath: '/fonts/'
+                .pipe(consolidate('swig', {
+                    glyphs: codepoints
                 }))
                 .pipe(gulp.dest('gen/sass'))
             ;
