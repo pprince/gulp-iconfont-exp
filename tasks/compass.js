@@ -8,7 +8,8 @@ gulp.task('compass', ['iconfont'], function() {
         .pipe(compass({
             config_file: 'compass.rb',
             css: 'build',
-            sass: 'src/sass'
+            sass: 'src/sass',
+            require: ['susy', 'bootstrap']
         }))
         .on('error', handleErrors);
 });
