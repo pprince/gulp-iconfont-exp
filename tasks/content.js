@@ -7,6 +7,7 @@ var frontmatter = require('gulp-front-matter');
 var ssg         = require('gulp-ssg');
 var header      = require('gulp-header');
 var consolidate = require('gulp-consolidate');
+var handleErrors= require('./util/handleErrors');
 
 
 var site = {
@@ -23,6 +24,8 @@ gulp.task('content', function() {
             remove: false
         }))
 
+        .on('error', handleErrors)
+
         .pipe(consolidate(
             'swig',
             function(file) {
@@ -30,13 +33,14 @@ gulp.task('content', function() {
                     site: site,
                     page: file.meta
                 };
-            },
-            {
-                useContents: true
             }
         ))
 
+        .on('error', handleErrors)
+
         .pipe(ssg(site))
+
+        .on('error', handleErrors)
 
         .pipe(pandoc({
             from: 'markdown',
