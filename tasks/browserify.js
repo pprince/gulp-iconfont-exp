@@ -1,7 +1,7 @@
 var gulp         = require('gulp');
 var gutil        = require('gulp-util');
 var browserify   = require('browserify');
-var handleErrors = require('../util/handleErrors');
+var handleErrors = require('./util/handleErrors');
 var source       = require('vinyl-source-stream');
 
 gulp.task('browserify', function(){

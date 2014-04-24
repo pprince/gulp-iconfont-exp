@@ -1,2 +1,8 @@
 process.chdir(__dirname);
-require('./gulp');
+
+var glob = require('glob');
+
+glob.sync('tasks/*.{js,coffee}').forEach(function(taskFile){
+    require('./' + taskFile);
+});
+
