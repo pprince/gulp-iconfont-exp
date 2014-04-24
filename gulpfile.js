@@ -1,3 +1,5 @@
+require('coffee-script/register');
+
 process.chdir(__dirname);
 
 var glob = require('glob');
