@@ -1,6 +1,10 @@
-var changed    = require('gulp-changed');
+'use strict';
+
 var gulp       = require('gulp');
+
+var changed    = require('gulp-changed');
 var imagemin   = require('gulp-imagemin');
+
 
 gulp.task('images', function() {
     var dest = 'build/images';

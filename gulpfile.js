@@ -1,3 +1,5 @@
+'use strict';
+
 require('coffee-script/register');
 
 process.chdir(__dirname);

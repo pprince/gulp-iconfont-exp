@@ -3,18 +3,16 @@
 var gulp        = require('gulp');
 var gutil       = require('gulp-util');
 
-var es          = require('event-stream');
 var tap         = require('gulp-tap');
 var gulpif      = require('gulp-if');
 var spawn       = require('gulp-spawn');
-var header      = require('gulp-header');
 var rename      = require('gulp-rename');
 var vartree     = require('gulp-vartree');
 var consolidate = require('gulp-consolidate');
 var frontmatter = require('gulp-front-matter');
-var swig        = require('swig');
-var Nunjucks    = require('nunjucks');
 var Filter      = require('gulp-filter');
+var swig        = require('swig');
+
 
 var site = {
     title:  'Site Title Here',
@@ -27,7 +25,6 @@ gulp.task('content', function() {
     swig.setDefaults({ autoescape: false });
 
     var markdownFilter = Filter('**/*.md');
-    var nunjucks = Nunjucks;
 
     return gulp.src(['src/content/**/*.{html,md}'])
 

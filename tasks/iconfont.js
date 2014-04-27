@@ -1,7 +1,11 @@
+'use strict';
+
 var gulp        = require('gulp');
 var gutil       = require('gulp-util');
+
 var iconfont    = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
+
 
 gulp.task('iconfont', function() {
     return gulp.src(['src/iconfont/**/*.svg'])
