@@ -142,7 +142,7 @@ gulp.task('content', function() {
 
         // Output .html Files
         // ------------------
-        .pipe(gulp.dest('gen/content'))
+        .pipe(gulp.dest('build'))
 
         // Output Site Tree
         // ----------------
