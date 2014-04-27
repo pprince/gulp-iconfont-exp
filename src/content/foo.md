@@ -1,5 +1,6 @@
 ---
 title: 'Page Title Here'
+layout: testing
 ---
 
 {{ site.title }}
@@ -8,4 +9,4 @@ title: 'Page Title Here'
 {{ page.title }}
 ----------------
 
-Some content.
+My URL: {{ page.href }}

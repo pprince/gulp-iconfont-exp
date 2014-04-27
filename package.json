@@ -51,7 +51,13 @@
     "gulp-iconfont": "0.0.11",
     "consolidate": "~0.10.0",
     "gulp-rename": "~1.2.0",
-    "gulp-if": "~1.0.0"
+    "gulp-if": "~1.0.0",
+    "gulp-tap": "~0.1.1",
+    "gulp-debug": "~0.3.0",
+    "gulp-spawn": "~0.3.0",
+    "stream-combiner": "0.0.4",
+    "nunjucks": "~1.0.4",
+    "gulp-filter": "~0.4.1"
   },
   "dependencies": {
     "backbone": "~1.1.2",

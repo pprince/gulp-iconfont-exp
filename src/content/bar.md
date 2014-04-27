@@ -9,4 +9,4 @@ noprettyurl: true
 {{ page.title }}
 ----------------
 
-Some content.
+My URL: {{ page.href }}
