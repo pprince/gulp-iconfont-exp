@@ -1,5 +1,5 @@
 ---
-title: 'Homepage'
+title: 'Page Title Here'
 ---
 
 {{ site.title }}
