@@ -15,8 +15,7 @@ gulp.task('iconfont', function() {
                 if (arguments[0].match(/^Found a line element in the icon/)) {
                     return;
                 }
-                gutil.log.apply(gutil, ['gulp-iconfont: '].concat(
-                    [].slice.call(arguments, 0).concat()));
+                gutil.log.apply(gutil, ['gulp-iconfont: '].concat([].slice.call(arguments, 0).concat()));
             }
         }))
         .on('codepoints', function(codepoints, options) {

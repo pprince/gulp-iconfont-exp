@@ -81,6 +81,7 @@ gulp.task('content', function() {
         // ------------------------
         .pipe(tap(function(file, t){
             if (file.meta.href) {
+                file.meta.extname = '.html'
                 file.meta.href = file.meta.href.replace(/\/index\.(md|html)$/, '/');
                 file.meta.href = file.meta.href.replace(/\.md$/, '.html');
             }
