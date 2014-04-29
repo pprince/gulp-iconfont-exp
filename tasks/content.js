@@ -20,7 +20,7 @@ var site = {
 };
 
 
-gulp.task('content', function() {
+gulp.task('content', ['iconfont'], function() {
     
     swig.setDefaults({ autoescape: false });
 

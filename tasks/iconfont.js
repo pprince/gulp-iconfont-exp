@@ -26,7 +26,13 @@ gulp.task('iconfont', function() {
                 .pipe(consolidate('swig', {
                     glyphs: codepoints
                 }))
-                .pipe(gulp.dest('gen/sass'))
+                .pipe(gulp.dest('build/sass'))
+            ;
+            gulp.src('src/data/templates/iconfont.json')
+                .pipe(consolidate('swig', {
+                    glyphs: codepoints
+                }))
+                .pipe(gulp.dest('build/data'))
             ;
         })
         .pipe(gulp.dest('build/fonts'))

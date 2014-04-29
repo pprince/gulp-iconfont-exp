@@ -1,6 +1,6 @@
 $iconfont-glyphs: (
     {% for glyph in glyphs -%}
-            "{{ glyph.name }}": "\{{ glyph.codepoint }}"
-            {%- if not loop.last -%} , {%- endif %}
+        "{{ glyph.name }}": "\{{ glyph.codepoint }}"
+        {%- if not loop.last -%} , {%- endif %}
     {% endfor %}
 );
