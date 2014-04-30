@@ -1,4 +1,4 @@
-preferred_syntax = :sass
+preferred_syntax = :scss
 http_path = '/'
 css_dir = 'build/css'
 sass_dir = 'src/sass'

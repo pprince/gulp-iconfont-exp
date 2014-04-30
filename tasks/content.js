@@ -14,10 +14,10 @@ var Filter      = require('gulp-filter');
 var swig        = require('swig');
 
 
-var site = {
-    title:  'Site Title Here',
-    tree: {}
-};
+var sharedSiteData = require('./util/shared-site-data');
+
+// gulp-vartree will build site tree into this
+sharedSiteData.tree = {};
 
 
 gulp.task('content', ['iconfont'], function() {
@@ -67,7 +67,7 @@ gulp.task('content', ['iconfont'], function() {
         // For building index pages?
         .pipe(vartree({
             prop:       'meta',
-            root:       site.tree,
+            root:       sharedSiteData.tree,
             childsProp: 'children',
             pathProp:   'dirname',
             nameProp:   'basename',
@@ -95,7 +95,7 @@ gulp.task('content', ['iconfont'], function() {
             'swig',
             function(file) {
                 return {
-                    site: site,
+                    site: sharedSiteData,
                     page: file.meta
                 };
             },
@@ -131,7 +131,7 @@ gulp.task('content', ['iconfont'], function() {
             if (typeof file.meta.layout != 'undefined') {
                 var template = process.cwd() + '/src/layouts/' + file.meta.layout + '.html';
                 file.contents = new Buffer(swig.renderFile(template, {
-                    site: site,
+                    site: sharedSiteData,
                     page: file.meta,
                     content: file.contents.toString('utf-8')
                 }));
@@ -145,7 +145,7 @@ gulp.task('content', ['iconfont'], function() {
         // Output Site Tree
         // ----------------
         .on('end', function() {
-            console.log(JSON.stringify(site.tree, null, 2));
+            console.log(JSON.stringify(sharedSiteData, null, 2));
         })
     ;
 });

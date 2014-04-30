@@ -1,6 +1,0 @@
-{
-    {% for glyph in glyphs -%}
-        "{{ glyph.name }}": "\{{ glyph.codepoint }}"
-        {%- if not loop.last -%} , {%- endif %}
-    {% endfor %}
-};

@@ -8,12 +8,13 @@ var handleErrors = require('./util/handleErrors');
 
 
 gulp.task('compass', ['iconfont'], function() {
-    return gulp.src('src/sass/*.sass')
+    return gulp.src('src/sass/*.{sass,scss}')
         .pipe(compass({
-            config_file: 'compass.rb',
+            debug: true,
             css: 'build/css',
             sass: 'src/sass',
-            require: ['susy', 'bootstrap']
-        }))
-        .on('error', handleErrors);
+            require: ['susy'],
+            import_path: ['build/sass']
+        }));
+        //.on('error', handleErrors);
 });

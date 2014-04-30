@@ -6,9 +6,12 @@ var gutil       = require('gulp-util');
 var iconfont    = require('gulp-iconfont');
 var consolidate = require('gulp-consolidate');
 
+var sharedSiteData = require('./util/shared-site-data');
 
 gulp.task('iconfont', function() {
+
     return gulp.src(['src/iconfont/**/*.svg'])
+
         .pipe(iconfont({
             fontName: 'iconfont',
             log: function() {
@@ -18,23 +21,26 @@ gulp.task('iconfont', function() {
                 gutil.log.apply(gutil, ['gulp-iconfont: '].concat( [].slice.call(arguments, 0).concat() ));
             }
         }))
+
         .on('codepoints', function(codepoints, options) {
+
             codepoints.forEach(function(glyph) {
                 glyph.codepoint = glyph.codepoint.toString(16);
             });
+
+            sharedSiteData.iconfont = codepoints;
+
             gulp.src('src/sass/templates/_iconfont.scss')
                 .pipe(consolidate('swig', {
-                    glyphs: codepoints
+                    glyphs: codepoints,
+                    font_name: options.fontName
                 }))
                 .pipe(gulp.dest('build/sass'))
             ;
-            gulp.src('src/data/templates/iconfont.json')
-                .pipe(consolidate('swig', {
-                    glyphs: codepoints
-                }))
-                .pipe(gulp.dest('build/data'))
-            ;
         })
+
         .pipe(gulp.dest('build/fonts'))
+
     ;
+
 });

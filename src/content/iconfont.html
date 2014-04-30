@@ -1,0 +1,10 @@
+---
+layout: default
+title: Icon Font
+---
+
+<ul>
+    {% for glyph in site.iconfont %}
+        <li data-icon="&#x{{ glyph.codepoint }};">{{ glyph.name }}</li>
+    {% endfor %}
+</ul>
